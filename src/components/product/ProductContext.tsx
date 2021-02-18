@@ -49,8 +49,7 @@ export const ProductsProvider: React.FC = ({ children }) => {
     };
 
     const removeUnselected = (id: number) => {
-        const withoutUnselected = ArrayUtils.setToArray(selectedProducts).filter(productId => productId !== id);
-        setSelectedProducts(new Set(withoutUnselected));
+        setSelectedProducts(prev => new Set(ArrayUtils.setToArray(prev).filter(productId => productId !== id)));
     };
 
     const onProductSelected = (id: number) => {
