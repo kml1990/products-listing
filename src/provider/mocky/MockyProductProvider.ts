@@ -16,7 +16,7 @@ export default class MockyProductProvider implements ProductsProvider {
 
     async fetchProducts(): Promise<Product[]> {
         const results = await axios.get(MOCKY_PRODUCTS_ENDPOINT);
-        if (!results.data) {
+        if (!results.data || results.status !== 200) {
             return [];
         }
         return this._mockyProductParser.parse(results.data);

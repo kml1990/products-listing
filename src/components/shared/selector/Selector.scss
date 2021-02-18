@@ -1,0 +1,60 @@
+@import "../../../constants.scss";
+
+.Selector {
+  display: block;
+  position: relative;
+  padding-left: 3rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  font-size: $largeFontSize;
+  user-select: none;
+
+  &:hover {
+    & .Selector__input ~ .Selector__checkmark {
+        background-color: darken($greyColor, 10%);
+    }
+  }
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+    cursor: pointer;
+
+    &:checked {
+      & ~ .Selector__checkmark {
+        background-color: $primaryColor;
+        border-color: transparent;
+      }
+
+      & ~ .Selector__checkmark:after {
+        display: block;
+      }
+    }
+  }
+
+  &__checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    width: 2rem;
+    background-color: $greyColor;
+    border-radius: $xSmallMargin;
+    border: 0.05rem solid darken($greyColor, 3%);
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+      left: 0.7rem;
+      top: 0.3rem;
+      width: 0.4rem;
+      height: 0.8rem;
+      border: solid $whiteColor;
+      border-width: 0 0.25rem 0.25rem 0;
+      transform: rotate(45deg);
+    }
+  }
+}

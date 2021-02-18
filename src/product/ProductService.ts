@@ -11,7 +11,6 @@ export default class ProductService {
 
     constructor(productProvider: ProductsProvider) {
         this._productProvider = productProvider;
-
         this._products = new Map();
     }
 

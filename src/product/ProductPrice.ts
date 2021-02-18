@@ -22,6 +22,6 @@ export default class ProductPrice {
     }
 
     isDiscounted(): boolean {
-        return this._current > this._old;
+        return this._current < this._old;
     }
 }

@@ -1,22 +1,14 @@
-import React, { ReactElement, useEffect } from 'react';
-import AppConfig from '../config/AppConfig';
-import useInjection from '../di/DependencyHook';
-import DependencyType from '../di/DependencyType';
+import React, { ReactElement } from 'react';
+import Inventory from './inventory/Inventory';
+import { ProductsProvider } from './product/ProductContext';
 
 import './App.scss';
-import Inventory from './inventory/Inventory';
 
 const App: React.FC = (): ReactElement => {
-    const appConfig = useInjection<AppConfig>(DependencyType.AppConfig);
-
-    useEffect(() => {
-        appConfig.configure();
-    }, []);
-
     return (
-        <div className="App">
+        <ProductsProvider>
             <Inventory />
-        </div>
+        </ProductsProvider>
     );
 };
 

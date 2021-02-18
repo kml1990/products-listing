@@ -22,15 +22,14 @@
         background-position: center;
     }
 
-    &__imageBadge {
+    &__successColor {
         position: absolute;
         bottom: 0;
         left: 0;
         width: 100%;
-        padding: $xSmallPadding 0;
+        padding: $xSmallPadding;
         color: $whiteColor;
         background-color: $cardImageOverlayColor;
-        text-align: center;
     }
 
     &__content {

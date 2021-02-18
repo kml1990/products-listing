@@ -4,11 +4,19 @@
 
 $primaryColor:                  #7e41b8;
 $whiteColor:                    #ffffff;
+$greyColor:                     #eeeeee;
 $blackColor:                    #000000;
+$errorColor:                    #ef333d;
+$successColor:                  #2bb92b;
+$warningColor:                  #ffbd4e;
 $backgroundColor:               #f6f5fa;
 
+$boxShadowColor:                rgba( $blackColor, .15 );
+$cardImageOverlayColor:         rgba( $errorColor, .5 );
 
-$cardImageOverlayColor:         rgba(255, 60, 45, 0.5);
+// ======================================================================
+// Spacing
+// ======================================================================
 
 $xSmallPadding:                 0.25rem;
 $smallPadding:                  $xSmallPadding * 2;
@@ -21,8 +29,77 @@ $mediumMargin:                  $smallMargin * 2;
 $largeMargin:                   $mediumMargin * 2;
 
 // ======================================================================
-// Product
+// Spacing
 // ======================================================================
 
-$productWidth: 15rem;
-$productHeight: $productWidth * 2;
+$smallFontSize:                 0.8rem;
+$mediumFontSize:                1rem;
+$largeFontSize:                 1.25rem;
+
+// ======================================================================
+// Misc
+// ======================================================================
+
+$productCardWidth:              15rem;
+$productCardHeight:             $productCardWidth * 2;
+
+$cardBorderRadius:              $smallMargin;
+$cardBoxShadow:                 $boxShadowColor 0px 0.005rem 0.25rem;
+$cardBoxShadowHover:            $boxShadowColor 0px 0.15rem 0.5rem;
+
+%button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $mediumFontSize;
+    width: 100%;
+    max-width: $productCardWidth;
+    color: $whiteColor;
+    background-color: $primaryColor;
+    border-radius: $smallMargin;
+    padding: $smallPadding;
+    margin-bottom: $smallMargin;
+    border: 0;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover,
+    &:active {
+        @extend %buttonActive;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+%buttonActive {
+    background-color: lighten($primaryColor, 10%);
+    border-color: lighten($primaryColor, 10%);
+}
+
+// ======================================================================
+// Responsive
+// ======================================================================
+
+$mobileBreakpoint:              576px;
+$tabletBreakpoint:              768px;
+$desktopBreakPoint:             1200px;
+
+@mixin mobile {
+    @media (min-width: #{$mobileBreakpoint}) {
+        @content;
+    }
+}
+ 
+@mixin tablet {
+    @media (min-width: #{$tabletBreakpoint}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktopBreakPoint}) {
+        @content;
+    }
+}

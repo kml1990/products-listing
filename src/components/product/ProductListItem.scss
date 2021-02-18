@@ -1,5 +1,21 @@
 @import '../../constants.scss';
 
 .ProductListItem {
-    height: $productHeight;
+    height: $productCardHeight;
+
+    &__name {
+        font-size: $mediumFontSize;
+    }
+
+    &__oldPrice {
+        margin-left: $smallMargin;
+        color: $errorColor;
+        text-decoration: line-through;
+    }
+
+    &__selector {
+        position: absolute;
+        top: $mediumMargin;
+        left: $mediumMargin;
+    }
 }

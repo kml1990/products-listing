@@ -1,5 +1,7 @@
 import React, { ReactElement } from 'react';
 
+import './Button.scss';
+
 export type OnButtonClick = () => void;
 
 export interface ButtonProps {
@@ -9,7 +11,7 @@ export interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = ({ name, onClick }): ReactElement => {
     return (
-        <button type="button" className="Button" onClick={onClick}>
+        <button className="Button" type="button" onClick={onClick}>
             {name}
         </button>
     );

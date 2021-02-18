@@ -1,0 +1,23 @@
+@import '../../constants.scss';
+
+.ProductStock {
+
+    &__stockQuantity {
+        color: $successColor;
+    }
+
+    &__stockLow,
+    &__stockOut {
+        font-size: $smallFontSize;
+        width: 100%;
+        text-transform: uppercase;
+    }
+
+    &__stockLow {
+        color: $warningColor;
+    }
+
+    &__stockOut {
+        color: $errorColor;
+    }
+}

@@ -17,6 +17,6 @@ const Card: React.FC<CardProps> = ({ image, imageBadge, className, children }): 
             <div className="Card__content">{children}</div>
         </div>
     );
-}
+};
 
 export default Card;
