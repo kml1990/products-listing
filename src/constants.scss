@@ -1,0 +1,28 @@
+// ======================================================================
+// Colors
+// ======================================================================
+
+$primaryColor:                  #7e41b8;
+$whiteColor:                    #ffffff;
+$blackColor:                    #000000;
+$backgroundColor:               #f6f5fa;
+
+
+$cardImageOverlayColor:         rgba(255, 60, 45, 0.5);
+
+$xSmallPadding:                 0.25rem;
+$smallPadding:                  $xSmallPadding * 2;
+$mediumPadding:                 $smallPadding * 2;
+$largePadding:                  $mediumPadding * 2;
+
+$xSmallMargin:                  0.25rem;
+$smallMargin:                   $xSmallMargin * 2;
+$mediumMargin:                  $smallMargin * 2;
+$largeMargin:                   $mediumMargin * 2;
+
+// ======================================================================
+// Product
+// ======================================================================
+
+$productWidth: 15rem;
+$productHeight: $productWidth * 2;

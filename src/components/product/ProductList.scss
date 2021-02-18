@@ -1,0 +1,9 @@
+@import '../../constants.scss';
+
+.ProductList {
+    display: grid;
+    grid-template-columns: repeat(4, $productWidth);
+    grid-auto-rows: 1fr;
+    grid-gap: $mediumMargin;
+    justify-content: center;
+}

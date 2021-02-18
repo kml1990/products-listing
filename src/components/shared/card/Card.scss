@@ -1,0 +1,23 @@
+@import '../../../constants.scss';
+
+.Card {
+    background-color: $whiteColor;
+
+    &__image {
+        position: relative;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 70%;
+    }
+
+    &__imageBadge {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: $xSmallPadding 0;
+        color: $whiteColor;
+        background-color: $cardImageOverlayColor;
+    }
+}
