@@ -44,13 +44,21 @@ export const ProductsProvider: React.FC = ({ children }) => {
         };
     }, []);
 
+    const addSelected = (id: number) => {
+        setSelectedProducts(prev => new Set(prev.add(id)));
+    };
+
+    const removeUnselected = (id: number) => {
+        const withoutUnselected = ArrayUtils.setToArray(selectedProducts).filter(productId => productId !== id);
+        setSelectedProducts(new Set(withoutUnselected));
+    };
+
     const onProductSelected = (id: number) => {
-        if (!selectedProducts.has(id)) {
-            selectedProducts.add(id);
-        } else {
-            selectedProducts.delete(id);
+        if (selectedProducts.has(id)) {
+            removeUnselected(id);
+            return;
         }
-        setSelectedProducts(new Set(selectedProducts));
+        addSelected(id);
     };
 
     const onProductsRemoved = () => {

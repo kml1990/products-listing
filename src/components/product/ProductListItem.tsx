@@ -17,13 +17,13 @@ const ProductListItem: React.FC<ProductListItemProps> = ({ product }): ReactElem
     const { id, name, price, thumbnail, promotionBadge } = product;
     const { current: currentPrice, old: oldPrice } = price;
 
-    const onSelected = useCallback(() => {
-        onProductSelected(id);
-    }, [id]);
-
     return (
         <Card className="ProductListItem" image={thumbnail} imageBadge={promotionBadge}>
-            <Selector className="ProductListItem__selector" id={id.toString()} onSelected={onSelected} />
+            <Selector
+                className="ProductListItem__selector"
+                id={id.toString()}
+                onSelected={() => onProductSelected(id)}
+            />
             <h3 className="ProductListItem__name">{name}</h3>
             <h4 className="ProductListItem__price">
                 <span className="ProductListItem__currentPrice">{StringUtils.toGBP(currentPrice)}</span>
