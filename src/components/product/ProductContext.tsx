@@ -34,11 +34,13 @@ export const ProductsProvider: React.FC = ({ children }) => {
 
     useEffect(() => {
         let isLoadingProducts = true;
-        productService.getProducts().then(fetchedProducts => {
+        const fetchProducts = async () => {
+            const fetchedProducts = await productService.getProducts();
             if (isLoadingProducts) {
                 setProducts(fetchedProducts);
             }
-        });
+        };
+        fetchProducts();
         return () => {
             isLoadingProducts = false;
         };
